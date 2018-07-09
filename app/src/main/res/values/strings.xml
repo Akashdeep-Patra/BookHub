@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">firebase</string>
+    <string name="email_id_hint">Email ID</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_text">LOGIN</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_form_user">FormUser</string>
+</resources>

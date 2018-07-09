@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_edit_cornerradius">50dp</dimen>
+    <dimen name="login_margin">10dp</dimen>
+    <dimen name="login_text_size">30sp</dimen>
+    <dimen name="login_button_elevation">20dp</dimen>
+    <dimen name="button_text_size">20dp</dimen>
+    <dimen name="loginbutton_corner_radius">20dp</dimen>
+</resources>

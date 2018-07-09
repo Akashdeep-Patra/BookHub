@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context=".ProfileActivity">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/profileimage"
+        android:layout_width="160dp"
+        android:elevation="20dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:background="@drawable/round_shape_mask"
+        android:src="@drawable/camera_50dp" />
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_shape_mask"
+        android:elevation="20dp"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/name"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_shape_mask"
+            android:padding="10dp"
+            android:text="Name"
+            android:textSize="30dp" />
+    </android.support.design.card.MaterialCardView>
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_shape_mask"
+        android:elevation="10dp"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/city"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_shape_mask"
+            android:padding="10dp"
+            android:text="City"
+            android:textSize="30dp" />
+    </android.support.design.card.MaterialCardView>
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_shape_mask"
+        android:elevation="10dp"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/college"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_shape_mask"
+            android:padding="10dp"
+            android:text="College"
+            android:textSize="30dp" />
+    </android.support.design.card.MaterialCardView>
+</LinearLayout>
