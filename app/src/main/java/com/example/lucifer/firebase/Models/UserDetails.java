@@ -12,10 +12,18 @@ import java.util.Map;
 
 @IgnoreExtraProperties
 public class UserDetails {
-    private String name, loaction, college, user_id;
+    private String name, loaction, college, user_id, number;
     private String image;
     private @ServerTimestamp
     Date timestamp;
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
 
     public UserDetails() {
     }

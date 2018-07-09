@@ -22,39 +22,57 @@
             android:elevation="20dp"
             tools:targetApi="lollipop">
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+            <android.support.design.widget.CollapsingToolbarLayout
                 android:layout_width="match_parent"
-                android:background="#f98b88"
-                android:layout_height="?attr/actionBarSize"
-                android:elevation="10dp"
-                android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
-                tools:targetApi="lollipop" />
+                android:layout_height="match_parent"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleGravity="top"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="#f98b88"
+                    android:elevation="10dp"
+                    android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
+                    tools:targetApi="lollipop" />
+            </android.support.design.widget.CollapsingToolbarLayout>
 
         </android.support.design.widget.AppBarLayout>
+
         <ProgressBar
+            android:id="@+id/progress_circular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/progress_circular"
-            android:elevation="15dp"
-            android:layout_gravity="center_horizontal|center_vertical"/>
-        <android.support.v7.widget.RecyclerView
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:elevation="15dp" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swip"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#d3d3d3"
-            android:layout_gravity="fill"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:id="@+id/recycle_book">
+            android:layout_marginTop="?attr/actionBarSize">
 
-        </android.support.v7.widget.RecyclerView>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycle_book"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:background="#d3d3d3">
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
 
 
         <com.getbase.floatingactionbutton.FloatingActionsMenu
             android:id="@+id/fab_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-         android:layout_gravity="bottom|right"
+            android:layout_gravity="bottom|right"
             android:layout_margin="16dp"
             app:fab_addButtonColorNormal="@color/colorPrimaryDark"
             app:fab_addButtonColorPressed="@color/colorPrimary"
@@ -82,8 +100,10 @@
                 app:fab_title="label" />
 
             <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/ic_fingerprint_black_24dp"
                 app:fab_colorNormal="@color/colorPrimaryDark"
                 app:fab_colorPressed="@color/colorPrimary"
                 app:fab_title="label" />

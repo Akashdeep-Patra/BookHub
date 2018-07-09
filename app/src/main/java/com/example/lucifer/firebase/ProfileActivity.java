@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageButton;
 import android.support.v7.widget.AppCompatImageView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -38,53 +39,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ProfileActivity extends AppCompatActivity  {
-   private  TextView name,city,college;
-   private AppCompatImageView profile_image;
-   FirebaseFirestore db;
-   private List<UserDetails> users;
-   private ProgressDialog progressDialog;
+public class ProfileActivity extends AppCompatActivity {
+    private TextView name, city, college, number;
+    private AppCompatImageView profile_image;
+    FirebaseFirestore db;
+    private List<UserDetails> users;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        name=findViewById(R.id.name);
-        city=findViewById(R.id.city);
-        college=findViewById(R.id.college);
-        profile_image=findViewById(R.id.profileimage);
-        progressDialog=new ProgressDialog(this);
+        name = findViewById(R.id.name);
+        city = findViewById(R.id.city);
+        number = findViewById(R.id.number);
+        college = findViewById(R.id.college);
+        profile_image = findViewById(R.id.profileimage);
+        progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Loading");
         progressDialog.setMessage("Please wait");
         progressDialog.setCancelable(false);
         progressDialog.show();
-        db=FirebaseFirestore.getInstance();
-        CollectionReference user_reference=db.collection("users");
-        Query  user_query=user_reference.whereEqualTo("user_id",FirebaseAuth.getInstance().getCurrentUser().getUid());
+        db = FirebaseFirestore.getInstance();
+        CollectionReference user_reference = db.collection("users");
+        Query user_query = user_reference.whereEqualTo("user_id", FirebaseAuth.getInstance().getCurrentUser().getUid());
         user_query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-             if (task.isSuccessful())
-             {
-                  users=task.getResult().toObjects(UserDetails.class);
-                  UserDetails user= users.get(0);
-                  name.setText(user.getName());
-                  city.setText(user.getLoaction());
-                  college.setText(user.getCollege());
-                    Transformation transformation= new RoundedTransformationBuilder()
+                if (task.isSuccessful()) {
+                    users = task.getResult().toObjects(UserDetails.class);
+                    UserDetails user = users.get(0);
+                    name.setText("Name :   " + user.getName());
+                    city.setText("City :   " + user.getLoaction());
+                    college.setText("College :   " + user.getCollege());
+                    number.setText("Ph number : " + user.getNumber());
+                    Transformation transformation = new RoundedTransformationBuilder()
                             .borderColor(Color.WHITE)
                             .borderWidthDp(5)
                             .cornerRadiusDp(50)
                             .oval(false)
                             .build();
-                 Picasso.get().load(user.getImage()).centerCrop().transform(transformation).fit().into(profile_image);
-                 progressDialog.dismiss();
-             }
+                    Picasso.get().load(user.getImage()).centerCrop().
+                            resize(profile_image.getMeasuredWidth(), profile_image.getMeasuredHeight())
+                            .placeholder(R.drawable.ic_cloud_download_black_24dp).transform(transformation).into(profile_image);
+                    progressDialog.dismiss();
+                }
             }
         });
     }
-
-
 
 
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FormUser">
+    tools:context=".inputForms.FormUser">
 
     <android.support.v7.widget.AppCompatImageButton
         android:id="@+id/profileimage_form"
@@ -83,6 +83,29 @@
             android:drawablePadding="10dp"
             android:hint="College"
             android:inputType="text"
+            android:textSize="30sp" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/number_edit_form"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:boxCornerRadiusBottomEnd="50dp"
+        app:boxCornerRadiusBottomStart="50dp"
+        app:boxCornerRadiusTopEnd="50dp"
+        app:boxCornerRadiusTopStart="50dp"
+        app:boxStrokeColor="@color/colorPrimaryDark"
+        app:counterEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Ph number"
+            android:inputType="number"
             android:textSize="30sp" />
 
     </android.support.design.widget.TextInputLayout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lucifer.firebase">
-
+<uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,24 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".login"
-            android:noHistory="true" />
-        <activity
-            android:name=".HomePageActivity"
-            android:theme="@style/AppTheme.home">
+            android:name=".inputForms.login"
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity" />
+
+        <activity
+            android:name=".HomePageActivity"
+            android:theme="@style/AppTheme.home">
+
+        </activity>
+        <activity android:name=".inputForms.SignupActivity" />
         <activity android:name=".ProfileActivity" />
         <activity
-            android:name=".FormUser"
+            android:name=".inputForms.FormUser"
             android:label="@string/title_activity_form_user" />
         <activity android:name=".bookList" />
-        <activity android:name=".bookForm"></activity>
+        <activity android:name=".inputForms.bookForm" />
+        <activity android:name=".BookFull"></activity>
     </application>
 
 </manifest>

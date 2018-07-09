@@ -6,12 +6,12 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/header_image"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/header_image"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/round_shape_mask"
         android:src="@drawable/profile_nav_icon" />
 
@@ -28,7 +28,7 @@
         android:id="@+id/header2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       android:layout_gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="4dp"
         android:text="header two "
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"

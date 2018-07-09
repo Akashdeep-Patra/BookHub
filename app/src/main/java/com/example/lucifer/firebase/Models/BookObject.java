@@ -7,7 +7,7 @@ import java.util.Date;
 
 @IgnoreExtraProperties
 public class BookObject {
-    private String name,author,publish_year,genere,user_id,price,image;
+    private String name, author, publish_year, genere, user_id, price, image;
     private @ServerTimestamp
     Date timestamp;
 

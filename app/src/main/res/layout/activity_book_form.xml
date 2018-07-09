@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:drawablePadding="10dp"
             android:hint="Year of publishing"
-            android:inputType="text"
+            android:inputType="date"
             android:textSize="30sp" />
 
     </android.support.design.widget.TextInputLayout>
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:drawablePadding="10dp"
             android:hint="Price"
-            android:inputType="text"
+            android:inputType="number"
             android:textSize="30sp" />
 
     </android.support.design.widget.TextInputLayout>
